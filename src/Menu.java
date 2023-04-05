@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Menu {
 
-    public static void main(String[]args) {
+    public static void main(String[] args) {
 
         int intSelector, firstInt, secondInt;
         boolean close = false;
@@ -13,7 +13,7 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
 
         try {
-            while(!close) {
+            while (!close) {
 
                 System.out.println("""
                         What would you like to do?
@@ -53,8 +53,7 @@ public class Menu {
                     }
                 }
             }
-        }
-        catch(InputMismatchException error) {
+        } catch (InputMismatchException error) {
             System.out.println("Input format error, please enter a whole number.");
             System.out.println("Something went wrong!");
             System.out.println("The error: " + error);
@@ -76,18 +75,16 @@ public class Menu {
     }
 
     static String mod2Ints(int intOne, int intTwo) {
-        if (intTwo > 0) {
-            if (intOne % intTwo == 0) {
-                int answerDiv;
-                answerDiv = intOne / intTwo;
-                return intOne + " and " + intTwo + " are divisible. The answer is " + answerDiv + ".";
-
-            } else {
-                return intOne + " and " + intTwo + " are not divisible.";
-            }
+        if (intTwo == 0) {
+            return "The denominator cannot be zero.";
+        }
+        if (intOne % intTwo == 0) {
+            int answerDiv;
+            answerDiv = intOne / intTwo;
+            return intOne + " and " + intTwo + " are divisible. The answer is " + answerDiv + ".";
 
         } else {
-            return "The denominator cannot be zero.";
+            return intOne + " and " + intTwo + " are not divisible.";
         }
     }
 }
