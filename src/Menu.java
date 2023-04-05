@@ -25,49 +25,39 @@ public class Menu {
 
                 intSelector = sc.nextInt();
 
-                if(intSelector == 0) {
+                if (intSelector == 0) {
                     System.out.println("Goodbye");
                     close = true;
-                } else if(intSelector > 0 && intSelector < 4) {
 
+                } else {
                     System.out.println("Enter first number: ");
                     firstInt = sc.nextInt();
 
                     System.out.println("Enter second number: ");
                     secondInt = sc.nextInt();
 
-                    if(intSelector == 1) {
-                        answer = sum2Ints(firstInt, secondInt);
-                        System.out.println(answer);
-
-                    } else if(intSelector == 2) {
-                        answer = prod2Ints(firstInt, secondInt);
-                        System.out.println(answer);
-
-                    } else {
-                        if(firstInt % secondInt == 0) {
+                    switch (intSelector) {
+                        case 1 -> {
+                            answer = sum2Ints(firstInt, secondInt);
+                            System.out.println(answer);
+                        }
+                        case 2 -> {
+                            answer = prod2Ints(firstInt, secondInt);
+                            System.out.println(answer);
+                        }
+                        case 3 -> {
                             answer = mod2Ints(firstInt, secondInt);
                             System.out.println(answer);
-
-                        } else {
-                            System.out.println("No");
-
                         }
-
+                        default -> System.out.println("Your choice should be between 0 and 3.");
                     }
-
-                } else {
-                    System.out.println("Your choice should be between 0 and 3.");
                 }
-
             }
         }
         catch(InputMismatchException error) {
-
             System.out.println("Input format error, please enter a whole number.");
             System.out.println("Something went wrong!");
             System.out.println("The error: " + error);
-
         }
 
         sc.close();
@@ -86,11 +76,20 @@ public class Menu {
     }
 
     static String mod2Ints(int intOne, int intTwo) {
-        int answerMod;
-        answerMod = intOne / intTwo;
-        return "The answer is " + answerMod;
-    }
+        if (intTwo > 0) {
+            if (intOne % intTwo == 0) {
+                int answerDiv;
+                answerDiv = intOne / intTwo;
+                return intOne + " and " + intTwo + " are divisible. The answer is " + answerDiv + ".";
 
+            } else {
+                return intOne + " and " + intTwo + " are not divisible.";
+            }
+
+        } else {
+            return "The denominator cannot be zero.";
+        }
+    }
 }
 
 
