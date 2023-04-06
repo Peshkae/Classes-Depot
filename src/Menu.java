@@ -29,7 +29,10 @@ public class Menu {
                     System.out.println("Goodbye");
                     close = true;
 
-                } else {
+                } else if (intSelector > 3) {
+                    System.out.println("Your choice should be between 0 and 3.");
+                }
+                else {
                     System.out.println("Enter first number: ");
                     firstInt = sc.nextInt();
 
@@ -49,7 +52,6 @@ public class Menu {
                             answer = mod2Ints(firstInt, secondInt);
                             System.out.println(answer);
                         }
-                        default -> System.out.println("Your choice should be between 0 and 3.");
                     }
                 }
             }
