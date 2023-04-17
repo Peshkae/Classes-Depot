@@ -61,6 +61,17 @@ public class Menu {
             System.out.println("The error: " + error);
         }
 
+//        long longOne, longTwo, answerLong;
+//
+//        System.out.println("Big number test 1:");
+//        longOne = sc.nextLong();
+//
+//        System.out.println("Big number test 1:");
+//        longTwo = sc.nextLong();
+//
+//        answerLong = longOne * longTwo;
+//        System.out.println(answerLong);
+
         sc.close();
     }
 
