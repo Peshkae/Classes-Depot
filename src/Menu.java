@@ -6,7 +6,8 @@ public class Menu {
 
     public static void main(String[] args) {
 
-        int intSelector, firstInt, secondInt;
+        int selector;
+        long firstVal, secondVal;
         boolean close = false;
         String answer;
 
@@ -23,33 +24,32 @@ public class Menu {
                          > 0. Exit
                         """);
 
-                intSelector = sc.nextInt();
+                selector = sc.nextInt();
 
-                if (intSelector == 0) {
+                if (selector == 0) {
                     System.out.println("Goodbye");
                     close = true;
 
-                } else if (intSelector > 3) {
+                } else if (selector > 3) {
                     System.out.println("Your choice should be between 0 and 3.");
-                }
-                else {
+                } else {
                     System.out.println("Enter first number: ");
-                    firstInt = sc.nextInt();
+                    firstVal = sc.nextLong();
 
                     System.out.println("Enter second number: ");
-                    secondInt = sc.nextInt();
+                    secondVal = sc.nextLong();
 
-                    switch (intSelector) {
+                    switch (selector) {
                         case 1 -> {
-                            answer = sum2Ints(firstInt, secondInt);
+                            answer = sum2Values(firstVal, secondVal);
                             System.out.println(answer);
                         }
                         case 2 -> {
-                            answer = prod2Ints(firstInt, secondInt);
+                            answer = prod2Values(firstVal, secondVal);
                             System.out.println(answer);
                         }
                         case 3 -> {
-                            answer = mod2Ints(firstInt, secondInt);
+                            answer = mod2Values(firstVal, secondVal);
                             System.out.println(answer);
                         }
                     }
@@ -61,43 +61,32 @@ public class Menu {
             System.out.println("The error: " + error);
         }
 
-//        long longOne, longTwo, answerLong;
-//
-//        System.out.println("Big number test 1:");
-//        longOne = sc.nextLong();
-//
-//        System.out.println("Big number test 1:");
-//        longTwo = sc.nextLong();
-//
-//        answerLong = longOne * longTwo;
-//        System.out.println(answerLong);
-
         sc.close();
     }
 
-    static String sum2Ints(int intOne, int intTwo) {
-        int answerSum;
-        answerSum = intOne + intTwo;
-        return "The answer to the sum of " + intOne + " and " + intTwo + " is " + answerSum + ".";
+    static String sum2Values(long valOne, long valTwo) {
+        long answerSum;
+        answerSum = valOne + valTwo;
+        return "The answer to the sum of " + valOne + " and " + valTwo + " is " + answerSum + ".";
     }
 
-    static String prod2Ints(int intOne, int intTwo) {
-        int answerProd;
-        answerProd = intOne * intTwo;
-        return "The answer to the product of " + intOne + " and " + intTwo + " is " + answerProd + ".";
+    static String prod2Values(long valOne, long valTwo) {
+        long answerProd;
+        answerProd = valOne * valTwo;
+        return "The answer to the product of " + valOne + " and " + valTwo + " is " + answerProd + ".";
     }
 
-    static String mod2Ints(int intOne, int intTwo) {
-        if (intTwo == 0) {
+    static String mod2Values(long valOne, long valTwo) {
+        if (valTwo == 0) {
             return "The denominator cannot be zero.";
         }
-        if (intOne % intTwo == 0) {
-            int answerDiv;
-            answerDiv = intOne / intTwo;
-            return intOne + " and " + intTwo + " are divisible. The answer is " + answerDiv + ".";
+        if (valOne % valTwo == 0) {
+            long answerDiv;
+            answerDiv = valOne / valTwo;
+            return valOne + " and " + valTwo + " are divisible. The answer is " + answerDiv + ".";
 
         } else {
-            return intOne + " and " + intTwo + " are not divisible.";
+            return valOne + " and " + valTwo + " are not divisible.";
         }
     }
 }
