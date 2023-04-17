@@ -1,6 +1,6 @@
-
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
+
 
 public class Window{
 
@@ -23,6 +23,8 @@ public class Window{
     public static void main(String[]args) {
 
         Window window = new Window();
+
+
 
     }
 }
