@@ -76,7 +76,7 @@ public class Date {
     }
 
     public void setYear(int pYear) {
-        if (pYear > 0) {
+        if (pYear >= 1970) {
             year = pYear;
         }
     }

@@ -65,7 +65,7 @@ public class DateTime extends Date {
     public String toString() {
         String dateString = super.toString();
         String dateTimeString;
-        dateTimeString = "Hour is " + hours + ", minute is " + minutes + ", second is " + seconds + dateString + " ";
+        dateTimeString = "Hour is " + hours + ", minute is " + minutes + ", second is " + seconds + ", " + dateString;
         return dateTimeString;
     }
 
