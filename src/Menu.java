@@ -40,18 +40,17 @@ public class Menu {
                     secondVal = sc.nextLong();
 
                     switch (selector) {
-                        case 1 -> {
+                        case 1:
                             answer = sum2Values(firstVal, secondVal);
                             System.out.println(answer);
-                        }
-                        case 2 -> {
+
+                        case 2:
                             answer = prod2Values(firstVal, secondVal);
                             System.out.println(answer);
-                        }
-                        case 3 -> {
+
+                        case 3:
                             answer = mod2Values(firstVal, secondVal);
                             System.out.println(answer);
-                        }
                     }
                 }
             }
