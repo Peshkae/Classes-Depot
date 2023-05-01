@@ -55,7 +55,7 @@ public class Date {
                     day = pDay;
                 }
             case 2:
-                if (year % 4 == 0) {     // <- uses current value for year for validation of if it is a leap year //
+                if (isLeapYear(year)) {     // <- uses current value for year for validation of if it is a leap year //
                     if (pDay >= 1 && pDay <= 29) {
                         day = pDay;
                     }
@@ -103,5 +103,10 @@ public class Date {
         }
         return isEqual;
     }
+
+    public boolean isLeapYear(int pYear) {
+        return (pYear % 4 == 0);
+    }
+
 
 }
